@@ -181,7 +181,7 @@ plan 22;
                         while @array and $h eq @array[0] {
                             take shift @array;
                         }
-                    }
+                    }.eager
                 ];
             }
         }
@@ -199,7 +199,7 @@ plan 22;
                 my $h = shift @array,
                 gather while @array and $h eq @array[0] {
                     take shift @array;
-                }
+                }.eager
             ];
         }
     }
